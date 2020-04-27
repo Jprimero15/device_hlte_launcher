@@ -1,5 +1,5 @@
-#
-# Copyright (C) 2018-2020 The LineageOS Project
+# Copyright (C) 2013-2016 The CyanogenMod Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,18 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_hltekor.mk \
-    $(LOCAL_DIR)/lineage_hltekor.mk \
-    $(LOCAL_DIR)/xtended_hltekor.mk
+# Check for target product
+ifeq (xtended_hltekor,$(TARGET_PRODUCT))
 
-COMMON_LUNCH_CHOICES := \
-    havoc_hltekor-user \
-    havoc_hltekor-userdebug \
-    havoc_hltekor-eng \
-    lineage_hltekor-user \
-    lineage_hltekor-userdebug \
-    lineage_hltekor-eng \
-    xtended_hltekor-user \
-    xtended_hltekor-userdebug \
-    xtended_hltekor-eng
+# Inherit some common MSM-Xtended stuff.
+$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
+
+$(call inherit-product, device/samsung/hltekor/full_hlte.mk)
+
+PRODUCT_DEVICE := hltekor
+PRODUCT_NAME := xtended_hltekor
+
+endif
