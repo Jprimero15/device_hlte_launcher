@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (lineage_hltetmo,$(TARGET_PRODUCT))
+ifeq (xtended_hltetmo,$(TARGET_PRODUCT))
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common MSM-Xtended stuff.
+$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
 
 $(call inherit-product, device/samsung/hltetmo/full_hltetmo.mk)
 
 PRODUCT_DEVICE := hltetmo
-PRODUCT_NAME := lineage_hltetmo
+PRODUCT_NAME := xtended_hltetmo
 
 endif

@@ -14,9 +14,17 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_hltetmo.mk
+    $(LOCAL_DIR)/havoc_hltetmo.mk \
+    $(LOCAL_DIR)/lineage_hltetmo.mk \
+    $(LOCAL_DIR)/xtended_hltetmo.mk
 
 COMMON_LUNCH_CHOICES := \
+    havoc_hltetmo-user \
+    havoc_hltetmo-userdebug \
+    havoc_hltetmo-eng \
     lineage_hltetmo-user \
     lineage_hltetmo-userdebug \
-    lineage_hltetmo-eng
+    lineage_hltetmo-eng \
+    xtended_hltetmo-user \
+    xtended_hltetmo-userdebug \
+    xtended_hltetmo-eng

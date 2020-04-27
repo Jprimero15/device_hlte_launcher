@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (lineage_hltetmo,$(TARGET_PRODUCT))
+ifeq (havoc_hltetmo,$(TARGET_PRODUCT))
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Havoc stuff.
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 $(call inherit-product, device/samsung/hltetmo/full_hltetmo.mk)
 
 PRODUCT_DEVICE := hltetmo
-PRODUCT_NAME := lineage_hltetmo
+PRODUCT_NAME := havoc_hltetmo
 
 endif
