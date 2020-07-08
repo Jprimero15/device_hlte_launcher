@@ -1,5 +1,5 @@
-#
-# Copyright (C) 2018-2020 The LineageOS Project
+# Copyright (C) 2013-2016 The CyanogenMod Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,22 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_hlte.mk \
-    $(LOCAL_DIR)/havoc_hlte.mk \
-    $(LOCAL_DIR)/lineage_hlte.mk \
-    $(LOCAL_DIR)/xtended_hlte.mk
+# Check for target product
+ifeq (aosp_hlte,$(TARGET_PRODUCT))
 
-COMMON_LUNCH_CHOICES := \
-    aosp_hlte-user \
-    aosp_hlte-userdebug \
-    aosp_hlte-eng \
-    havoc_hlte-user \
-    havoc_hlte-userdebug \
-    havoc_hlte-eng \
-    lineage_hlte-user \
-    lineage_hlte-userdebug \
-    lineage_hlte-eng \
-    xtended_hlte-user \
-    xtended_hlte-userdebug \
-    xtended_hlte-eng
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+$(call inherit-product, device/samsung/hlte/full_hlte.mk)
+
+PRODUCT_DEVICE := hlte
+PRODUCT_NAME := aosp_hlte
+
+endif
