@@ -15,6 +15,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_hlte.mk \
+    $(LOCAL_DIR)/du_hlte.mk \
     $(LOCAL_DIR)/havoc_hlte.mk \
     $(LOCAL_DIR)/lineage_hlte.mk \
     $(LOCAL_DIR)/xtended_hlte.mk
@@ -23,6 +24,9 @@ COMMON_LUNCH_CHOICES := \
     aosp_hlte-user \
     aosp_hlte-userdebug \
     aosp_hlte-eng \
+    du_hlte-user \
+    du_hlte-userdebug \
+    du_hlte-eng \
     havoc_hlte-user \
     havoc_hlte-userdebug \
     havoc_hlte-eng \
